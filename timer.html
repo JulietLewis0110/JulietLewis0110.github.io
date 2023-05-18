@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>我们的爱</title>
+    <style>
+        /* body {
+            font-family: KaiTi, Arial, sans-serif;
+            text-align: center;
+            background-color: #FFC0CB;
+            overflow: hidden;
+        } */
+        body {
+            font-family: KaiTi, Arial, sans-serif;
+            text-align: center;
+            overflow: hidden;
+            background-image: url("./figures/bg.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center 50px;
+        }
+
+        #timer {
+            font-size: 48px;
+            margin-top: 30px;
+            color: black;
+            line-height: 1.5;
+            position: absolute;
+            top: 55%;
+            left: 55%;
+            transform: translate(-50%, -50%);
+        }
+
+        @keyframes fade-in-out {
+            0% {
+                opacity: 0; /* 图片透明度为 0，开始时隐藏 */
+            }
+            50% {
+                opacity: 1; /* 图片透明度为 1，达到最高亮度 */
+            }
+            100% {
+                opacity: 0; /* 图片透明度为 0，完全隐藏 */
+            }
+        }
+
+        #image1 {
+            position: absolute;
+            top: 55%;
+            left: 10%;
+            transform: translate(-50%, -50%);
+            animation: fade-in-out 5.2s infinite;
+        }
+
+        #image2 {
+            position: absolute;
+            top: 20%;
+            left: 15%;
+            transform: translate(-50%, -50%);
+            animation: fade-in-out 5s infinite;
+        }
+
+        #image3 {
+            position: absolute;
+            top: 72%;
+            left: 25%;
+            transform: translate(-50%, -50%);
+            animation: fade-in-out 4.5s infinite;
+        }
+
+        #image4 {
+            position: absolute;
+            top: 35%;
+            left: 28%;
+            transform: translate(-50%, -50%);
+            animation: fade-in-out 5.5s infinite;
+        }
+
+        #image5 {
+            position: absolute;
+            top: 15%;
+            left: 70%;
+            transform: translate(-50%, -50%);
+            animation: fade-in-out 4s infinite;
+        }
+
+        #image6 {
+            position: absolute;
+            top: 20%;
+            left: 90%;
+            transform: translate(-50%, -50%);
+            animation: fade-in-out 6s infinite;
+        }
+
+        #image7 {
+            position: absolute;
+            top: 80%;
+            left: 90%;
+            transform: translate(-50%, -50%);
+            animation: fade-in-out 5.7s infinite;
+        }
+
+        #image8 {
+            position: absolute;
+            top: 50%;
+            left: 85%;
+            transform: translate(-50%, -50%);
+            animation: fade-in-out 4.7s infinite;
+        }
+    </style>
+</head>
+<body>
+    <style>
+        figcaption {
+          font-size: 25px;
+          color: pink;
+        }
+    </style>
+      
+    <div id="image1">
+        <figure>
+            <img src="./figures/img1.JPG" alt="小爱心" width="400">
+            <figcaption>2023/2/24</figcaption>
+        </figure>
+    </div>
+
+    <div id="image2">
+        <figure>
+            <img src="./figures/img2.JPG" alt="小爱心" width="250">
+            <figcaption>2023/3/3</figcaption>
+        </figure>
+    </div>
+
+    <div id="image3">
+        <figure>
+            <img src="./figures/img3.JPG" alt="小爱心" width="250">
+            <figcaption>2023/3/6</figcaption>
+        </figure>
+    </div>
+
+    <div id="image4">
+        <figure>
+            <img src="./figures/img4.JPG" alt="小爱心" width="250">
+            <figcaption>2023/4/30</figcaption>
+        </figure>
+    </div>
+
+    <div id="image5">
+        <figure>
+            <img src="./figures/img5.JPG" alt="小爱心" width="400">
+            <figcaption>2023/4/29</figcaption>
+        </figure>
+    </div>
+
+    <div id="image6">
+        <figure>
+            <img src="./figures/img6.JPG" alt="小爱心" width="250">
+            <figcaption>2023/5/1</figcaption>
+        </figure>
+    </div>
+
+    <div id="image7">
+        <figure>
+            <img src="./figures/img7.JPG" alt="小爱心" width="250">
+            <figcaption>2023/5/1</figcaption>
+        </figure>
+    </div>
+
+    <div id="image8">
+        <figure>
+            <img src="./figures/img8.JPG" alt="小爱心" width="300">
+            <figcaption>2023/5/5</figcaption>
+        </figure>
+    </div>
+
+    <div id="timer">
+        从2023年1月10日凌晨2点49分至今
+        <br>
+        我们已经在一起了
+        <br>
+        <span id="months">00</span>月<span id="days">00</span>日<span id="hours">00</span>小时<span id="minutes">00</span>分钟<span id="seconds">00</span>秒
+        <br>
+        这个计时器和我们的爱
+        <br>
+        都将持续到时间的尽头~
+        <br>
+        李靖瑶❤罗乔序
+    </div>
+
+    <script>
+        // 定义起始日期
+        var startDate = new Date("2023-01-10T02:49:00");
+
+        function updateTimer() {
+            var now = new Date();
+            var duration = now - startDate;
+
+            // 计算月、日、时、分、秒
+            var months = Math.floor((duration % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
+            var days = Math.floor((duration % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((duration % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((duration % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((duration % (1000 * 60)) / 1000);
+
+            // 格式化月、日、时、分、秒，确保显示为两位数
+            months = months.toString().padStart(2, '0');
+            days = days.toString().padStart(2, '0');
+            hours = hours.toString().padStart(2, '0');
+            minutes = minutes.toString().padStart(2, '0');
+            seconds = seconds.toString().padStart(2, '0');
+
+            // 更新计时器显示
+            document.getElementById("months").textContent = months;
+            document.getElementById("days").textContent = days;
+            document.getElementById("hours").textContent = hours;
+            document.getElementById("minutes").textContent = minutes;
+            document.getElementById("seconds").textContent = seconds;
+        }
+
+        // 每秒更新一次计时器
+        setInterval(updateTimer, 1000);
+    </script>
+</body>
+</html>
